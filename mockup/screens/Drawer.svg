@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="360" height="640" viewBox="0 0 360 640">
+  <defs>
+    <rect id="rect-1" width="360" height="640" x="0" y="0" rx="0" ry="0"/>
+    <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#rect-1"/>
+    </mask>
+    <rect id="rect-3" width="304" height="640" x="0" y="0" rx="0" ry="0"/>
+    <filter id="filter-4" width="200%" height="200%" x="-50%" y="-50%" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="8" in="SourceAlpha" result="shadow-1-feOffset-shadow"/>
+      <feGaussianBlur in="shadow-1-feOffset-shadow" result="shadow-1-feGaussianBlur-shadow" stdDeviation="6.024"/>
+      <feColorMatrix in="shadow-1-feGaussianBlur-shadow" result="shadow-1-feColorMatrix-shadow" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/>
+      <feOffset dx="0" dy="6" in="SourceAlpha" result="shadow-2-feOffset-shadow"/>
+      <feGaussianBlur in="shadow-2-feOffset-shadow" result="shadow-2-feGaussianBlur-shadow" stdDeviation="18.072"/>
+      <feColorMatrix in="shadow-2-feGaussianBlur-shadow" result="shadow-2-feColorMatrix-shadow" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.12 0"/>
+      <feOffset dx="0" dy="16" in="SourceAlpha" result="shadow-3-feOffset-shadow"/>
+      <feGaussianBlur in="shadow-3-feOffset-shadow" result="shadow-3-feGaussianBlur-shadow" stdDeviation="14.458"/>
+      <feColorMatrix in="shadow-3-feGaussianBlur-shadow" result="shadow-3-feColorMatrix-shadow" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.14 0"/>
+      <feMerge>
+        <feMergeNode in="shadow-1-feColorMatrix-shadow"/>
+        <feMergeNode in="shadow-2-feColorMatrix-shadow"/>
+        <feMergeNode in="shadow-3-feColorMatrix-shadow"/>
+      </feMerge>
+    </filter>
+    <mask id="mask-5" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#rect-3"/>
+    </mask>
+    <rect id="rect-7" width="304" height="441" x="0" y="0"/>
+    <path id="path-8" fill-rule="evenodd" d="M4 0h280c2.2076601 0 4 1.7923399 4 4v32c0 2.2076601-1.7923399 4-4 4H4c-2.2076601 0-4-1.7923399-4-4V4c0-2.2076601 1.7923399-4 4-4z"/>
+    <mask id="mask-9" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-8"/>
+    </mask>
+    <path id="path-10" fill-rule="evenodd" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    <mask id="mask-11" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-10"/>
+    </mask>
+    <path id="path-13" fill-rule="evenodd" d="M1 0h294c.55191502 0 1 .44808498 1 1v38c0 .55191502-.44808498 1-1 1H1c-.55191502 0-1-.44808498-1-1V1c0-.55191502.44808498-1 1-1z"/>
+    <mask id="mask-14" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-13"/>
+    </mask>
+    <path id="path-15" fill-rule="evenodd" d="M4 0h280c2.2076601 0 4 1.7923399 4 4v32c0 2.2076601-1.7923399 4-4 4H4c-2.2076601 0-4-1.7923399-4-4V4c0-2.2076601 1.7923399-4 4-4z"/>
+    <mask id="mask-16" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-15"/>
+    </mask>
+    <path id="path-17" fill-rule="evenodd" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    <mask id="mask-18" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-17"/>
+    </mask>
+    <path id="path-20" fill-rule="evenodd" d="M1 0h294c.55191502 0 1 .44808498 1 1v38c0 .55191502-.44808498 1-1 1H1c-.55191502 0-1-.44808498-1-1V1c0-.55191502.44808498-1 1-1z"/>
+    <mask id="mask-21" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-20"/>
+    </mask>
+    <path id="path-22" fill-rule="evenodd" d="M4 0h280c2.2076601 0 4 1.7923399 4 4v32c0 2.2076601-1.7923399 4-4 4H4c-2.2076601 0-4-1.7923399-4-4V4c0-2.2076601 1.7923399-4 4-4z"/>
+    <mask id="mask-23" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-22"/>
+    </mask>
+    <path id="path-24" fill-rule="evenodd" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    <mask id="mask-25" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-24"/>
+    </mask>
+    <rect id="rect-27" width="296" height="40" x="0" y="0" rx="0" ry="0"/>
+    <mask id="mask-28" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#rect-27"/>
+    </mask>
+    <rect id="rect-30" width="304" height="167" x="0" y="0"/>
+    <rect id="rect-31" width="304" height="1" x="0" y="0" rx="0" ry="0"/>
+    <mask id="mask-32" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#rect-31"/>
+    </mask>
+  </defs>
+  <g>
+    <g>
+      <g>
+        <use fill="rgb(0,0,0)" opacity=".32" xlink:href="#rect-1"/>
+        <g mask="url(#mask-2)"/>
+      </g>
+      <g>
+        <use fill="black" stroke="black" stroke-opacity="0" stroke-width="0" filter="url(#filter-4)" xlink:href="#rect-3"/>
+        <use fill="rgb(250,250,250)" xlink:href="#rect-3"/>
+      </g>
+      <g mask="url(#mask-5)">
+        <rect width="304" height="640" x="0" y="0" fill="rgb(255,255,255)" rx="0" ry="0"/>
+      </g>
+    </g>
+    <g transform="translate(8 189)">
+      <g transform="translate(0 97)">
+        <use fill="none" xlink:href="#path-8"/>
+        <g mask="url(#mask-9)">
+          <g transform="translate(-8)">
+            <text font-size="0" style="white-space:pre" transform="translate(72 9)">
+              <tspan x="0" y="15" fill="rgb(0,0,0)" font-family="Roboto" font-size="14" font-weight="400" style="white-space:pre;text-transform:none" letter-spacing=".25">Body 2</tspan>
+            </text>
+            <g transform="translate(16 8)">
+              <use fill="none" xlink:href="#path-10"/>
+              <g mask="url(#mask-11)">
+                <rect width="24" height="24" x="0" y="0" fill="rgb(0,0,0)" fill-opacity=".38" rx="0" ry="0"/>
+              </g>
+            </g>
+            <g>
+              <use fill="none" xlink:href="#path-13"/>
+              <g mask="url(#mask-14)"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g transform="translate(0 49)">
+        <use fill="none" xlink:href="#path-15"/>
+        <g mask="url(#mask-16)">
+          <g transform="translate(-8)">
+            <text font-size="0" style="white-space:pre" transform="translate(72 9)">
+              <tspan x="0" y="15" fill="rgb(0,0,0)" font-family="Roboto" font-size="14" font-weight="400" style="white-space:pre;text-transform:none" letter-spacing=".25">Body 2</tspan>
+            </text>
+            <g transform="translate(16 8)">
+              <use fill="none" xlink:href="#path-17"/>
+              <g mask="url(#mask-18)">
+                <rect width="24" height="24" x="0" y="0" fill="rgb(0,0,0)" fill-opacity=".38" rx="0" ry="0"/>
+              </g>
+            </g>
+            <g>
+              <use fill="none" xlink:href="#path-20"/>
+              <g mask="url(#mask-21)"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g>
+        <use fill="none" xlink:href="#path-22"/>
+        <g mask="url(#mask-23)">
+          <g transform="translate(-8)">
+            <text font-size="0" style="white-space:pre" transform="translate(72 9)">
+              <tspan x="0" y="15" fill="rgb(98,0,238)" font-family="Roboto" font-size="14" font-weight="400" style="white-space:pre;text-transform:none" letter-spacing=".25">Decks</tspan>
+            </text>
+            <g transform="translate(16 8)">
+              <use fill="none" xlink:href="#path-24"/>
+              <g mask="url(#mask-25)">
+                <rect width="24" height="24" x="0" y="0" fill="rgb(59,0,221)" rx="0" ry="0"/>
+              </g>
+            </g>
+            <g>
+              <use fill="none" xlink:href="#rect-27"/>
+              <g mask="url(#mask-28)">
+                <g opacity=".12">
+                  <rect width="296" height="40" x="0" y="0" fill="rgb(59,0,221)" rx="0" ry="0"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g>
+      <g transform="translate(0 166)">
+        <use fill="none" xlink:href="#rect-31"/>
+        <g mask="url(#mask-32)" opacity=".12">
+          <rect width="304" height="1" x="0" y="0" fill="rgb(0,0,0)" fill-opacity=".87" rx="0" ry="0"/>
+        </g>
+      </g>
+      <text font-size="0" style="white-space:pre" transform="translate(16 109)">
+        <tspan x="0" y="19" fill="rgb(0,0,0)" font-family="Roboto Medium" font-size="20" font-weight="500" style="white-space:pre;text-transform:none" letter-spacing=".25">Menu</tspan>
+      </text>
+      <g transform="translate(16 135.0000104)"/>
+    </g>
+  </g>
+</svg>

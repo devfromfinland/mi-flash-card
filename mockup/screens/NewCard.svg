@@ -1,0 +1,293 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="360" height="640" viewBox="0 0 360 640">
+  <defs>
+    <path id="path-2" fill-rule="evenodd" d="M307 17V7h10v10h-10zm18-5c0-2.75957489 2.24041748-5 5-5s5 2.24042511 5 5-2.24041748 5-5 5-5-2.24042511-5-5zm22 5l-6-10h12l-6 10z"/>
+    <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-2"/>
+    </mask>
+    <path id="path-8" fill-rule="evenodd" d="M3 8V6h18v2H3zm0 5h18v-2H3v2zm0 5h18v-2H3v2z"/>
+    <mask id="mask-9" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-8"/>
+    </mask>
+    <rect id="rect-11" width="33" height="30" x="12" y="37"/>
+    <mask id="mask-12" x="0" y="0" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#rect-11"/>
+    </mask>
+    <path id="path-13" fill-rule="evenodd" d="M4 0h320c2.2076601 0 4 1.7923399 4 4v48c0 2.2076601-1.7923399 4-4 4H4c-2.2076601 0-4-1.7923399-4-4V4c0-2.2076601 1.7923399-4 4-4z"/>
+    <mask id="mask-14" x="-16.162" y="-166.458" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="-16.162" y="-166.458" fill="black"/>
+      <use fill="white" xlink:href="#path-13"/>
+    </mask>
+    <mask id="mask-15" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-13"/>
+    </mask>
+    <rect id="rect-16" width="1" height="17" x="0" y="0" rx="0" ry="0"/>
+    <mask id="mask-17" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#rect-16"/>
+    </mask>
+    <rect id="rect-19" width="63.838" height="12" x="0" y="2" rx="0" ry="0"/>
+    <mask id="mask-20" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#rect-19"/>
+    </mask>
+    <path id="path-22" fill-rule="evenodd" d="M4 0h320c2.2076601 0 4 1.7923399 4 4v48c0 2.2076601-1.7923399 4-4 4H4c-2.2076601 0-4-1.7923399-4-4V4c0-2.2076601 1.7923399-4 4-4z"/>
+    <mask id="mask-23" x="-16" y="-242" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="-16" y="-242" fill="black"/>
+      <use fill="white" xlink:href="#path-22"/>
+    </mask>
+    <mask id="mask-24" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-22"/>
+    </mask>
+    <path id="path-25" fill-rule="evenodd" d="M4 0h119.48874027c2.2076601 0 4 1.7923399 4 4v28c0 2.2076601-1.7923399 4-4 4H4c-2.2076601 0-4-1.7923399-4-4V4c0-2.2076601 1.7923399-4 4-4z"/>
+    <filter id="filter-26" width="200%" height="200%" x="-50%" y="-50%" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="1" in="SourceAlpha" result="shadow-1-feOffset-shadow"/>
+      <feGaussianBlur in="shadow-1-feOffset-shadow" result="shadow-1-feGaussianBlur-shadow" stdDeviation="1.807"/>
+      <feColorMatrix in="shadow-1-feGaussianBlur-shadow" result="shadow-1-feColorMatrix-shadow" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/>
+      <feOffset dx="0" dy="2" in="SourceAlpha" result="shadow-2-feOffset-shadow"/>
+      <feGaussianBlur in="shadow-2-feOffset-shadow" result="shadow-2-feGaussianBlur-shadow" stdDeviation=".602"/>
+      <feColorMatrix in="shadow-2-feGaussianBlur-shadow" result="shadow-2-feColorMatrix-shadow" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.12 0"/>
+      <feOffset dx="0" dy="1" in="SourceAlpha" result="shadow-3-feOffset-shadow"/>
+      <feGaussianBlur in="shadow-3-feOffset-shadow" result="shadow-3-feGaussianBlur-shadow" stdDeviation=".602"/>
+      <feColorMatrix in="shadow-3-feGaussianBlur-shadow" result="shadow-3-feColorMatrix-shadow" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.14 0"/>
+      <feMerge>
+        <feMergeNode in="shadow-1-feColorMatrix-shadow"/>
+        <feMergeNode in="shadow-2-feColorMatrix-shadow"/>
+        <feMergeNode in="shadow-3-feColorMatrix-shadow"/>
+      </feMerge>
+    </filter>
+    <mask id="mask-27" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-25"/>
+    </mask>
+    <path id="path-29" fill-rule="evenodd" d="M4 0h232c2.2076601 0 4 1.7923399 4 4v180c0 2.2076601-1.7923399 4-4 4H4c-2.2076601 0-4-1.7923399-4-4V4c0-2.2076601 1.7923399-4 4-4z"/>
+    <filter id="filter-30" width="200%" height="200%" x="-50%" y="-50%" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="5" in="SourceAlpha" result="shadow-1-feOffset-shadow"/>
+      <feGaussianBlur in="shadow-1-feOffset-shadow" result="shadow-1-feGaussianBlur-shadow" stdDeviation="3.012"/>
+      <feColorMatrix in="shadow-1-feGaussianBlur-shadow" result="shadow-1-feColorMatrix-shadow" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/>
+      <feOffset dx="0" dy="3" in="SourceAlpha" result="shadow-2-feOffset-shadow"/>
+      <feGaussianBlur in="shadow-2-feOffset-shadow" result="shadow-2-feGaussianBlur-shadow" stdDeviation="8.434"/>
+      <feColorMatrix in="shadow-2-feGaussianBlur-shadow" result="shadow-2-feColorMatrix-shadow" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.12 0"/>
+      <feOffset dx="0" dy="8" in="SourceAlpha" result="shadow-3-feOffset-shadow"/>
+      <feGaussianBlur in="shadow-3-feOffset-shadow" result="shadow-3-feGaussianBlur-shadow" stdDeviation="6.024"/>
+      <feColorMatrix in="shadow-3-feGaussianBlur-shadow" result="shadow-3-feColorMatrix-shadow" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.14 0"/>
+      <feMerge>
+        <feMergeNode in="shadow-1-feColorMatrix-shadow"/>
+        <feMergeNode in="shadow-2-feColorMatrix-shadow"/>
+        <feMergeNode in="shadow-3-feColorMatrix-shadow"/>
+      </feMerge>
+    </filter>
+    <mask id="mask-31" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-29"/>
+    </mask>
+    <rect id="rect-34" width="240" height="144" x="0" y="0"/>
+    <path id="path-35" fill-rule="evenodd" d="M4 0h232c2.2076601 0 4 1.7923399 4 4v136c0 2.2076601-1.7923399 4-4 4H4c-2.2076601 0-4-1.7923399-4-4V4c0-2.2076601 1.7923399-4 4-4z"/>
+    <filter id="filter-36" width="200%" height="200%" x="-50%" y="-50%" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="5" in="SourceAlpha" result="shadow-1-feOffset-shadow"/>
+      <feGaussianBlur in="shadow-1-feOffset-shadow" result="shadow-1-feGaussianBlur-shadow" stdDeviation="3.012"/>
+      <feColorMatrix in="shadow-1-feGaussianBlur-shadow" result="shadow-1-feColorMatrix-shadow" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/>
+      <feOffset dx="0" dy="3" in="SourceAlpha" result="shadow-2-feOffset-shadow"/>
+      <feGaussianBlur in="shadow-2-feOffset-shadow" result="shadow-2-feGaussianBlur-shadow" stdDeviation="8.434"/>
+      <feColorMatrix in="shadow-2-feGaussianBlur-shadow" result="shadow-2-feColorMatrix-shadow" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.12 0"/>
+      <feOffset dx="0" dy="8" in="SourceAlpha" result="shadow-3-feOffset-shadow"/>
+      <feGaussianBlur in="shadow-3-feOffset-shadow" result="shadow-3-feGaussianBlur-shadow" stdDeviation="6.024"/>
+      <feColorMatrix in="shadow-3-feGaussianBlur-shadow" result="shadow-3-feColorMatrix-shadow" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.14 0"/>
+      <feMerge>
+        <feMergeNode in="shadow-1-feColorMatrix-shadow"/>
+        <feMergeNode in="shadow-2-feColorMatrix-shadow"/>
+        <feMergeNode in="shadow-3-feColorMatrix-shadow"/>
+      </feMerge>
+    </filter>
+    <mask id="mask-37" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-35"/>
+    </mask>
+    <path id="path-39" fill-rule="evenodd" d="M1 0h254c.55191502 0 1 .44808498 1 1v30c0 .55191502-.44808498 1-1 1H1c-.55191502 0-1-.44808498-1-1V1c0-.55191502.44808498-1 1-1z"/>
+    <mask id="mask-40" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-39"/>
+    </mask>
+    <rect id="rect-41" width="256" height="32" x="0" y="0" rx="0" ry="0"/>
+    <mask id="mask-42" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#rect-41"/>
+    </mask>
+    <path id="path-44" fill-rule="evenodd" d="M1 0h254c.55191502 0 1 .44808498 1 1v30c0 .55191502-.44808498 1-1 1H1c-.55191502 0-1-.44808498-1-1V1c0-.55191502.44808498-1 1-1z"/>
+    <mask id="mask-45" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-44"/>
+    </mask>
+    <path id="path-46" fill-rule="evenodd" d="M1 0h254c.55191502 0 1 .44808498 1 1v30c0 .55191502-.44808498 1-1 1H1c-.55191502 0-1-.44808498-1-1V1c0-.55191502.44808498-1 1-1z"/>
+    <mask id="mask-47" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-46"/>
+    </mask>
+    <rect id="rect-48" width="256" height="32" x="0" y="0"/>
+    <rect id="rect-49" width="184" height="24" x="0" y="0"/>
+    <path id="path-50" fill-rule="evenodd" d="M9.5 17.5l5-5-5-5v10z"/>
+    <mask id="mask-51" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-50"/>
+    </mask>
+    <path id="path-53" fill-rule="evenodd" d="M1 0h254c.55191502 0 1 .44808498 1 1v30c0 .55191502-.44808498 1-1 1H1c-.55191502 0-1-.44808498-1-1V1c0-.55191502.44808498-1 1-1z"/>
+    <mask id="mask-54" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-53"/>
+    </mask>
+  </defs>
+  <g>
+    <rect width="360" height="24" x="0" y="0" fill="rgb(98,0,238)" rx="0" ry="0"/>
+    <use fill="none" xlink:href="#path-2"/>
+    <g mask="url(#mask-3)">
+      <rect width="62" height="24" x="0" y="0" fill="rgb(195,143,255)" rx="0" ry="0" transform="translate(298)"/>
+    </g>
+  </g>
+  <g transform="translate(0 24)">
+    <rect width="360" height="56" x="0" y="0" fill="none" rx="0" ry="0"/>
+    <rect width="360" height="56" x="0" y="0" fill="rgb(98,0,238)" rx="0" ry="0"/>
+    <g>
+      <rect width="360" height="56" x="0" y="0" fill="rgb(98,0,238)" rx="0" ry="0"/>
+      <g transform="translate(16 16)">
+        <use fill="none" xlink:href="#path-8"/>
+        <g mask="url(#mask-9)">
+          <rect width="24" height="24" x="0" y="0" fill="rgb(255,255,255)" rx="0" ry="0"/>
+        </g>
+      </g>
+    </g>
+    <text font-size="0" style="white-space:pre" transform="translate(72 15)">
+      <tspan x="0" y="19" fill="rgb(255,255,255)" font-family="Roboto Medium" font-size="20" font-weight="500" style="white-space:pre;text-transform:none" letter-spacing=".25">New Card</tspan>
+    </text>
+  </g>
+  <use fill-opacity="0" stroke="rgb(255,255,255)" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="2" mask="url(#mask-12)" xlink:href="#rect-11"/>
+  <text font-size="0" style="white-space:pre">
+    <tspan x="304" y="59" fill="rgb(255,255,255)" font-family="Roboto" font-size="18" font-weight="700" style="white-space:pre;text-transform:none" letter-spacing=".321">Back</tspan>
+  </text>
+  <g transform="translate(16.16203887 166.45846305)">
+    <g>
+      <use fill-opacity="0" stroke="rgb(98,0,238)" stroke-width="4" mask="url(#mask-14)" xlink:href="#path-13"/>
+      <g mask="url(#mask-15)">
+        <g transform="translate(78 19)">
+          <use fill="none" xlink:href="#rect-16"/>
+          <g mask="url(#mask-17)">
+            <rect width="1" height="17" x="0" y="0" fill="rgb(59,0,221)" rx="0" ry="0"/>
+          </g>
+        </g>
+        <text font-size="0" style="white-space:pre" transform="translate(16 16)">
+          <tspan x="0" y="17" fill="rgb(0,0,0)" font-family="Roboto" font-size="16" font-weight="400" style="white-space:pre;text-transform:none" letter-spacing=".15">Qué tal?</tspan>
+        </text>
+      </g>
+    </g>
+    <g transform="translate(11 -9)">
+      <use fill="none" xlink:href="#rect-19"/>
+      <g mask="url(#mask-20)">
+        <rect width="63.838" height="17" x="0" y="0" fill="rgb(255,255,255)" rx="0" ry="0" transform="translate(0 -1)"/>
+        <text font-size="0" style="white-space:pre" transform="translate(5)">
+          <tspan x="0" y="12" fill="rgb(98,0,238)" font-family="Roboto" font-size="12" font-weight="400" style="white-space:pre;text-transform:none" letter-spacing=".4">Question</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+  <g transform="translate(16 242)">
+    <use fill-opacity="0" stroke="rgb(0,0,0)" stroke-opacity=".32" stroke-width="2" mask="url(#mask-23)" xlink:href="#path-22"/>
+    <g mask="url(#mask-24)">
+      <text font-size="0" style="white-space:pre" transform="translate(16 59)">
+        <tspan x="0" y="12" fill="rgb(0,0,0)" font-family="Roboto" font-size="12" font-weight="400" style="white-space:pre;text-transform:none" letter-spacing=".4">Assistive text</tspan>
+      </text>
+      <text font-size="0" style="white-space:pre" transform="translate(16 16)">
+        <tspan x="0" y="17" fill="rgb(0,0,0)" font-family="Roboto" font-size="16" font-weight="400" style="white-space:pre;text-transform:none" letter-spacing=".15">Enter answer</tspan>
+      </text>
+    </g>
+  </g>
+  <g transform="translate(116 318)">
+    <g>
+      <use fill="black" stroke="black" stroke-opacity="0" stroke-width="0" filter="url(#filter-26)" xlink:href="#path-25"/>
+      <use fill="rgb(250,250,250)" xlink:href="#path-25"/>
+    </g>
+    <g mask="url(#mask-27)">
+      <rect width="127.489" height="36" x="0" y="0" fill="rgb(98,0,238)" rx="0" ry="0"/>
+      <text font-size="0" style="white-space:pre" transform="translate(16 10)">
+        <tspan x="18.537" y="13" fill="rgb(255,255,255)" font-family="Roboto Medium" font-size="14" font-weight="500" style="white-space:pre;text-transform:uppercase" letter-spacing="1.25">submit</tspan>
+      </text>
+    </g>
+  </g>
+  <text font-size="0" style="white-space:pre">
+    <tspan x="16" y="123" fill="rgb(0,0,0)" font-family="Roboto" font-size="20" font-weight="400" style="white-space:pre;text-transform:none">@Deck: </tspan>
+  </text>
+  <g transform="translate(105 92)">
+    <g>
+      <use fill="black" stroke="black" stroke-opacity="0" stroke-width="0" filter="url(#filter-30)" xlink:href="#path-29"/>
+      <use fill="rgb(250,250,250)" xlink:href="#path-29"/>
+    </g>
+    <g mask="url(#mask-31)">
+      <rect width="240" height="188" x="0" y="0" fill="rgb(255,255,255)" rx="0" ry="0"/>
+      <rect width="240" height="188" x="0" y="0" fill="rgb(0,0,0)" fill-opacity=".08" rx="0" ry="0"/>
+      <g transform="translate(0 44)">
+        <g>
+          <use fill="black" stroke="black" stroke-opacity="0" stroke-width="0" filter="url(#filter-36)" xlink:href="#path-35"/>
+          <use fill="rgb(250,250,250)" xlink:href="#path-35"/>
+        </g>
+        <g mask="url(#mask-37)">
+          <rect width="240" height="144" x="0" y="0" fill="rgb(255,255,255)" rx="0" ry="0"/>
+          <g transform="translate(-8 104)">
+            <text font-size="0" style="white-space:pre" transform="translate(16 6)">
+              <tspan x="0" y="15" fill="rgb(0,0,0)" font-family="Roboto" font-size="14" font-weight="400" style="white-space:pre;text-transform:none" letter-spacing=".25">Learn programming</tspan>
+            </text>
+            <g>
+              <use fill="none" xlink:href="#path-39"/>
+              <g mask="url(#mask-40)"/>
+            </g>
+          </g>
+          <g transform="translate(-8 72)">
+            <text font-size="0" style="white-space:pre" transform="translate(16 6)">
+              <tspan x="0" y="15" fill="rgb(0,0,0)" font-family="Roboto" font-size="14" font-weight="400" style="white-space:pre;text-transform:none" letter-spacing=".25">Learning Spanish</tspan>
+            </text>
+            <g>
+              <use fill="none" xlink:href="#rect-41"/>
+              <g mask="url(#mask-42)">
+                <rect width="256" height="32" x="0" y="0" fill="rgb(0,0,0)" fill-opacity=".08" rx="0" ry="0"/>
+              </g>
+            </g>
+          </g>
+          <g transform="translate(-8 40)">
+            <text font-size="0" style="white-space:pre" transform="translate(16 6)">
+              <tspan x="0" y="15" fill="rgb(0,0,0)" font-family="Roboto" font-size="14" font-weight="400" style="white-space:pre;text-transform:none" letter-spacing=".25">Learning Vietnamese</tspan>
+            </text>
+            <g>
+              <use fill="none" xlink:href="#path-44"/>
+              <g mask="url(#mask-45)"/>
+            </g>
+          </g>
+          <g transform="translate(-8 8)">
+            <text font-size="0" style="white-space:pre" transform="translate(16 6)">
+              <tspan x="0" y="15" fill="rgb(0,0,0)" font-family="Roboto" font-size="14" font-weight="400" style="white-space:pre;text-transform:none" letter-spacing=".25">Learning English</tspan>
+            </text>
+            <g>
+              <use fill="none" xlink:href="#path-46"/>
+              <g mask="url(#mask-47)"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g transform="translate(-8 8)">
+        <text font-size="0" style="white-space:pre" transform="translate(16 6)">
+          <tspan x="0" y="16" fill="rgb(0,0,0)" font-family="Roboto" font-size="18" font-weight="400" style="white-space:pre;text-transform:none" letter-spacing=".321">Learning Spanish</tspan>
+        </text>
+        <g transform="translate(216 4)">
+          <use fill="none" transform="rotate(90.000032 12 12.5)" xlink:href="#path-50"/>
+          <g mask="url(#mask-51)" transform="rotate(90.000032 12 12.5)">
+            <rect width="24" height="24" x="0" y="0" fill="rgb(0,0,0)" fill-opacity=".54" rx="0" ry="0"/>
+          </g>
+        </g>
+        <g>
+          <use fill="none" xlink:href="#path-53"/>
+          <g mask="url(#mask-54)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

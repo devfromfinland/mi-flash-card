@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="360" height="640" viewBox="0 0 360 640">
+  <defs>
+    <path id="path-1" fill-rule="evenodd" d="M4 0h146c2.2076601 0 4 1.7923399 4 4v28c0 2.2076601-1.7923399 4-4 4H4c-2.2076601 0-4-1.7923399-4-4V4c0-2.2076601 1.7923399-4 4-4z"/>
+    <filter id="filter-2" width="200%" height="200%" x="-50%" y="-50%" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="1" in="SourceAlpha" result="shadow-1-feOffset-shadow"/>
+      <feGaussianBlur in="shadow-1-feOffset-shadow" result="shadow-1-feGaussianBlur-shadow" stdDeviation="1.807"/>
+      <feColorMatrix in="shadow-1-feGaussianBlur-shadow" result="shadow-1-feColorMatrix-shadow" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/>
+      <feOffset dx="0" dy="2" in="SourceAlpha" result="shadow-2-feOffset-shadow"/>
+      <feGaussianBlur in="shadow-2-feOffset-shadow" result="shadow-2-feGaussianBlur-shadow" stdDeviation=".602"/>
+      <feColorMatrix in="shadow-2-feGaussianBlur-shadow" result="shadow-2-feColorMatrix-shadow" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.12 0"/>
+      <feOffset dx="0" dy="1" in="SourceAlpha" result="shadow-3-feOffset-shadow"/>
+      <feGaussianBlur in="shadow-3-feOffset-shadow" result="shadow-3-feGaussianBlur-shadow" stdDeviation=".602"/>
+      <feColorMatrix in="shadow-3-feGaussianBlur-shadow" result="shadow-3-feColorMatrix-shadow" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.14 0"/>
+      <feMerge>
+        <feMergeNode in="shadow-1-feColorMatrix-shadow"/>
+        <feMergeNode in="shadow-2-feColorMatrix-shadow"/>
+        <feMergeNode in="shadow-3-feColorMatrix-shadow"/>
+      </feMerge>
+    </filter>
+    <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-1"/>
+    </mask>
+    <path id="path-5" fill-rule="evenodd" d="M4 0h145.78591128c2.2076601 0 4 1.7923399 4 4v28c0 2.2076601-1.7923399 4-4 4H4c-2.2076601 0-4-1.7923399-4-4V4c0-2.2076601 1.7923399-4 4-4z"/>
+    <mask id="mask-6" x="-103" y="-397" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="-103" y="-397" fill="black"/>
+      <use fill="white" xlink:href="#path-5"/>
+    </mask>
+    <mask id="mask-7" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-5"/>
+    </mask>
+    <path id="path-9" fill-rule="evenodd" d="M307 17V7h10v10h-10zm18-5c0-2.75957489 2.24041748-5 5-5s5 2.24042511 5 5-2.24041748 5-5 5-5-2.24042511-5-5zm22 5l-6-10h12l-6 10z"/>
+    <mask id="mask-10" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-9"/>
+    </mask>
+    <path id="path-15" fill-rule="evenodd" d="M3 8V6h18v2H3zm0 5h18v-2H3v2zm0 5h18v-2H3v2z"/>
+    <mask id="mask-16" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#path-15"/>
+    </mask>
+    <rect id="rect-18" width="33" height="30" x="12" y="37"/>
+    <mask id="mask-19" x="0" y="0" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+      <rect width="360" height="640" x="0" y="0" fill="black"/>
+      <use fill="white" xlink:href="#rect-18"/>
+    </mask>
+  </defs>
+  <text font-size="0" style="white-space:pre">
+    <tspan x="82" y="221" fill="rgb(0,0,0)" font-family="Arial" font-size="24" font-weight="700" style="white-space:pre;text-transform:none">Learning English</tspan>
+  </text>
+  <text font-size="0" style="white-space:pre">
+    <tspan x="141" y="260" fill="rgb(130,130,130)" font-family="Arial" font-size="20" font-weight="400" style="white-space:pre;text-transform:none">20 cards</tspan>
+  </text>
+  <g transform="translate(103 448)">
+    <g>
+      <use fill="black" stroke="black" stroke-opacity="0" stroke-width="0" filter="url(#filter-2)" xlink:href="#path-1"/>
+      <use fill="rgb(250,250,250)" xlink:href="#path-1"/>
+    </g>
+    <g mask="url(#mask-3)">
+      <rect width="154" height="36" x="0" y="0" fill="rgb(98,0,238)" rx="0" ry="0"/>
+      <text font-size="0" style="white-space:pre" transform="translate(16 10)">
+        <tspan x="16.458" y="13" fill="rgb(255,255,255)" font-family="Roboto Medium" font-size="14" font-weight="500" style="white-space:pre;text-transform:uppercase" letter-spacing="1.25">START QUIZ</tspan>
+      </text>
+    </g>
+  </g>
+  <g transform="translate(103 397)">
+    <g>
+      <use fill="rgb(98,2,238)" fill-opacity="0" xlink:href="#path-5"/>
+      <use fill-opacity="0" stroke="rgb(0,0,0)" stroke-opacity=".12" stroke-width="2" mask="url(#mask-6)" xlink:href="#path-5"/>
+    </g>
+    <g mask="url(#mask-7)">
+      <text font-size="0" style="white-space:pre" transform="translate(16 10)">
+        <tspan x="2.845" y="13" fill="rgb(98,0,238)" font-family="Roboto Medium" font-size="14" font-weight="500" style="white-space:pre;text-transform:uppercase" letter-spacing="1.25">aDD NEW CARD</tspan>
+      </text>
+    </g>
+  </g>
+  <g>
+    <rect width="360" height="24" x="0" y="0" fill="rgb(98,0,238)" rx="0" ry="0"/>
+    <use fill="none" xlink:href="#path-9"/>
+    <g mask="url(#mask-10)">
+      <rect width="62" height="24" x="0" y="0" fill="rgb(195,143,255)" rx="0" ry="0" transform="translate(298)"/>
+    </g>
+  </g>
+  <g transform="translate(0 24)">
+    <rect width="360" height="56" x="0" y="0" fill="none" rx="0" ry="0"/>
+    <rect width="360" height="56" x="0" y="0" fill="rgb(98,0,238)" rx="0" ry="0"/>
+    <g>
+      <rect width="360" height="56" x="0" y="0" fill="rgb(98,0,238)" rx="0" ry="0"/>
+      <g transform="translate(16 16)">
+        <use fill="none" xlink:href="#path-15"/>
+        <g mask="url(#mask-16)">
+          <rect width="24" height="24" x="0" y="0" fill="rgb(255,255,255)" rx="0" ry="0"/>
+        </g>
+      </g>
+    </g>
+    <text font-size="0" style="white-space:pre" transform="translate(72 15)">
+      <tspan x="0" y="19" fill="rgb(255,255,255)" font-family="Roboto Medium" font-size="20" font-weight="500" style="white-space:pre;text-transform:none" letter-spacing=".25">Learning English</tspan>
+    </text>
+  </g>
+  <text font-size="0" style="white-space:pre">
+    <tspan x="304" y="59" fill="rgb(255,255,255)" font-family="Roboto" font-size="18" font-weight="700" style="white-space:pre;text-transform:none" letter-spacing=".321">Back</tspan>
+  </text>
+  <use fill-opacity="0" stroke="rgb(255,255,255)" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="2" mask="url(#mask-19)" xlink:href="#rect-18"/>
+</svg>

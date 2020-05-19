@@ -1,0 +1,17 @@
+{
+  "name": "MiFlashCard",
+  "displayName": "MiFlashCard",
+  "expo": {
+    "name": "MiFlashCard",
+    "slug": "MiFlashCard",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
