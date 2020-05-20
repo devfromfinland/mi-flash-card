@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet, StatusBar } from 'react-native'
-import { render } from 'react-dom'
+import { View, StyleSheet, FlatList, TouchableOpacity } from 'react-native'
 import MyButton from './MyButton'
+import ListDeckItem from './ListDeckItem'
+// import { connect } from 'react-redux'
 
-export default class ListDecks extends Component {
+class ListDecks extends Component {
   render() {
     let sampleData = {
       React: {
@@ -27,29 +28,117 @@ export default class ListDecks extends Component {
             answer: 'The combination of a function and the lexical environment within which that function was declared.'
           }
         ]
-      }
+      },
+      Item1: {
+        title: 'Item1',
+        questions: [
+          {
+            question: 'q1',
+            answer: 'a1'
+          }
+        ]
+      },
+      Item2: {
+        title: 'Item2',
+        questions: [
+          {
+            question: 'q1',
+            answer: 'a1'
+          }
+        ]
+      },
+      Item3: {
+        title: 'Item3',
+        questions: [
+          {
+            question: 'q1',
+            answer: 'a1'
+          }
+        ]
+      },
+      Item4: {
+        title: 'Item4',
+        questions: [
+          {
+            question: 'q1',
+            answer: 'a1'
+          }
+        ]
+      },
+      Item5: {
+        title: 'Item5',
+        questions: [
+          {
+            question: 'q1',
+            answer: 'a1'
+          }
+        ]
+      },
+      Item6: {
+        title: 'Item6',
+        questions: [
+          {
+            question: 'q1',
+            answer: 'a1'
+          }
+        ]
+      },
+      Item7: {
+        title: 'Item7',
+        questions: [
+          {
+            question: 'q1',
+            answer: 'a1'
+          }
+        ]
+      },
+      Item8: {
+        title: 'Item8',
+        questions: [
+          {
+            question: 'q1',
+            answer: 'a1'
+          }
+        ]
+      },
+      Item9: {
+        title: 'Item9',
+        questions: [
+          {
+            question: 'q1',
+            answer: 'a1'
+          }
+        ]
+      },
     }
-    let decks = Object.keys(sampleData)
+
+    let decks = Object.values(sampleData)
+
+    console.log('decks', decks)
 
     const { navigation } = this.props
+
     return (
       <View style={{flex: 1}}>
-        <Text>LIST OF DECKS</Text>
-        {decks.map((deckId) => (
-          <View key={deckId}>
-            <Text>
-              Deck {sampleData[deckId].title} has {sampleData[deckId].questions.length} cards
-            </Text>
-            <MyButton type='text' onPress={() => {
+        <FlatList 
+          data={decks}
+          renderItem={({ item }) => 
+            <TouchableOpacity onPress={() => {
               navigation.navigate('Deck', {
-                deckId
-              })
-            }}>
-              Go
-            </MyButton>
-          </View>
-        ))}
+                deckId: item.title
+              })}
+              }>
+              <ListDeckItem 
+                title={item.title}
+                content={item.questions.length}
+                />
+            </TouchableOpacity>
+          }
+          keyExtractor={item => item.title}
+        />
+
         <MyButton type='float' onPress={() => navigation.navigate('NewDeck')} />
+
       </View>
     )
   }
@@ -62,3 +151,6 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   }
 })
+
+// to connect to redux
+export default ListDecks
