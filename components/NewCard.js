@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet, TextInput, KeyboardAvoidingView, Platform, Keyboard } from 'react-native'
+import { View, Text, StyleSheet, TextInput, KeyboardAvoidingView, Platform, Keyboard, Dimensions } from 'react-native'
 import MyButton from './MyButton'
 import { purple, white, gray } from '../utils/colors'
 import { Snackbar } from 'react-native-paper'
@@ -13,8 +13,10 @@ export default class NewCard extends Component {
   }
 
   handleSubmit = () => {
+    const { deckId } = this.props.route.params
+
     // save to database
-    
+    // AsyncStorage
     
     // hide the keyboard
     Keyboard.dismiss()
@@ -24,18 +26,19 @@ export default class NewCard extends Component {
       question: '',
       answer: '',
       visible: true,  // success, inform user on screen
-      message: 'New card has been added.',
+      message: `New card has been added to '${deckId}' deck.`,
     }))
+
+    console.log('window height: ', Dimensions.get('window').height)
   }
 
-  _onToggleSnackBar = () => this.setState(state => ({ visible: !state.visible }));
-
-  _onDismissSnackBar = () => this.setState({ visible: false });
+  onDismissSnackBar = () => {
+    this.setState(() => ({ visible: false }))
+  }
 
   render() {
-    const { route, navigation } = this.props
-    const { deckId, data } = route.params
-    const { question, answer } = this.state
+    const { deckId } = this.props.route.params
+    const { question, answer, visible, message } = this.state
 
     return (
       <KeyboardAvoidingView
@@ -66,11 +69,12 @@ export default class NewCard extends Component {
         </MyButton>
 
         <Snackbar 
-          style={styles.notif}
-          visible={this.state.visible}
-          onDismiss={this._onDismissSnackBar}
+          style={{backgroundColor: gray}}
+          duration={2000}
+          visible={visible}
+          onDismiss={this.onDismissSnackBar}
           >
-          <Text style={{color: white}}>{this.state.message}</Text>
+          <Text style={{color: white}}>{message}</Text>
         </Snackbar>
       </KeyboardAvoidingView>
     )
@@ -104,10 +108,5 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     marginBottom: 20,
     borderRadius: 5,
-  },
-  notif: {
-    position: 'absolute',
-    bottom: 0,
-    backgroundColor: gray,
   },
 })
