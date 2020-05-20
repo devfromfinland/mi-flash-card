@@ -43,9 +43,11 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     marginBottom: 10,
+    alignSelf: 'center',
   },
   description: {
     fontSize: 18,
+    alignSelf: 'center',
   },
   center: {
     flex: 1,

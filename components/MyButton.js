@@ -15,31 +15,31 @@ export default function MyButton ({ children, onPress, style = {}, type }) {
     case 'text':
       return (
         <TouchableOpacity onPress={onPress}>
-          <Text style={[styles.btnText, { color: purple }, style]}>{children}</Text>
+          <Text style={[styles.btnText, { color: purple }, style]}>{children.toUpperCase()}</Text>
         </TouchableOpacity>
       )
     case 'primary':
       return (
         <TouchableOpacity style={styles.btnPrimary} onPress={onPress}>
-          <Text style={[styles.btnText, { color: white }, style]}>{children}</Text>
+          <Text style={[styles.btnText, { color: white }, style]}>{children.toUpperCase()}</Text>
         </TouchableOpacity>
       )
     case 'error':
       return (
         <TouchableOpacity style={styles.btnError} onPress={onPress}>
-          <Text style={[styles.btnText, { color: white }, style]}>{children}</Text>
+          <Text style={[styles.btnText, { color: white }, style]}>{children.toUpperCase()}</Text>
         </TouchableOpacity>
       )
     case 'secondary':
       return (
         <TouchableOpacity style={styles.btnSecondary} onPress={onPress}>
-          <Text style={[styles.btnText, { color: black }, style]}>{children}</Text>
+          <Text style={[styles.btnText, { color: black }, style]}>{children.toUpperCase()}</Text>
         </TouchableOpacity>
       )
     default: // outline
       return (
         <TouchableOpacity style={styles.btnOutline} onPress={onPress}>
-          <Text style={[styles.btnText, { color: purple }, style]}>{children}</Text>
+          <Text style={[styles.btnText, { color: purple }, style]}>{children.toUpperCase()}</Text>
         </TouchableOpacity>
       )
   }
@@ -48,8 +48,7 @@ export default function MyButton ({ children, onPress, style = {}, type }) {
 const styles = StyleSheet.create({
   btnText: {
     textAlign: 'center',
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontSize: 18,
   },
   btnPrimary: {
     padding: 10,
