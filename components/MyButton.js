@@ -4,7 +4,7 @@ import { purple, white, red, gray, black } from '../utils/colors'
 import { FontAwesome } from '@expo/vector-icons'
 
 export default function MyButton ({ children, onPress, style = {}, type }) {
-  // style: default = 'outline', 'primary', 'error', 'secondary', 'text'
+  // style: default = 'outline', 'primary', 'error', 'secondary', 'text', 'float'
   switch (type) {
     case 'float':
       return (
@@ -15,31 +15,31 @@ export default function MyButton ({ children, onPress, style = {}, type }) {
     case 'text':
       return (
         <TouchableOpacity onPress={onPress}>
-          <Text style={[styles.btnText, { color: purple }, style]}>{children.toUpperCase()}</Text>
+          <Text style={[styles.btnText, { color: purple }, style]}>{children}</Text>
         </TouchableOpacity>
       )
     case 'primary':
       return (
         <TouchableOpacity style={styles.btnPrimary} onPress={onPress}>
-          <Text style={[styles.btnText, { color: white }, style]}>{children.toUpperCase()}</Text>
+          <Text style={[styles.btnText, { color: white }, style]}>{children}</Text>
         </TouchableOpacity>
       )
     case 'error':
       return (
         <TouchableOpacity style={styles.btnError} onPress={onPress}>
-          <Text style={[styles.btnText, { color: white }, style]}>{children.toUpperCase()}</Text>
+          <Text style={[styles.btnText, { color: white }, style]}>{children}</Text>
         </TouchableOpacity>
       )
     case 'secondary':
       return (
         <TouchableOpacity style={styles.btnSecondary} onPress={onPress}>
-          <Text style={[styles.btnText, { color: black }, style]}>{children.toUpperCase()}</Text>
+          <Text style={[styles.btnText, { color: black }, style]}>{children}</Text>
         </TouchableOpacity>
       )
     default: // outline
       return (
         <TouchableOpacity style={styles.btnOutline} onPress={onPress}>
-          <Text style={[styles.btnText, { color: purple }, style]}>{children.toUpperCase()}</Text>
+          <Text style={[styles.btnText, { color: purple }, style]}>{children}</Text>
         </TouchableOpacity>
       )
   }
@@ -56,21 +56,27 @@ const styles = StyleSheet.create({
     backgroundColor: purple,
     alignSelf: 'center',
     borderRadius: 5,
-    margin: 20,
+    marginLeft: 20,
+    marginRight: 20,
+    marginTop: 10,
   },
   btnError: {
     padding: 10,
     backgroundColor: red,
     alignSelf: 'center',
     borderRadius: 5,
-    margin: 20,
+    marginLeft: 20,
+    marginRight: 20,
+    marginTop: 10,
   },
   btnSecondary: {
     padding: 10,
     backgroundColor: gray,
     alignSelf: 'center',
     borderRadius: 5,
-    margin: 20,
+    marginLeft: 20,
+    marginRight: 20,
+    marginTop: 10,
   },
   btnOutline: {
     padding: 10,
@@ -78,7 +84,9 @@ const styles = StyleSheet.create({
     borderColor: purple,
     alignSelf: 'center',
     borderRadius: 5,
-    margin: 20,
+    marginLeft: 20,
+    marginRight: 20,
+    marginTop: 10,
   },
   btnFloat: {
     position: 'absolute',

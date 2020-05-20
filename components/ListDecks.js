@@ -125,7 +125,8 @@ class ListDecks extends Component {
           renderItem={({ item }) => 
             <TouchableOpacity onPress={() => {
               navigation.navigate('Deck', {
-                deckId: item.title
+                deckId: item.title,
+                data: decks
               })}
               }>
               <ListDeckItem 

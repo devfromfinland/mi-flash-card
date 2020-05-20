@@ -5,9 +5,13 @@ import MyButton from './MyButton'
 
 export default class Quiz extends Component {
   render() {
+    const { route, navigation } = this.props
+    const { deckId, data } = route.params
+    
     return (
       <View>
         <Text>QUIZ</Text>
+        <Text>DeckID = {deckId}</Text>
       </View>
     )
   }

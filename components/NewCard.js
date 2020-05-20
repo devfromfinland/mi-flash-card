@@ -5,10 +5,15 @@ import MyButton from './MyButton'
 
 export default class NewCard extends Component {
   render() {
-    const { navigation } = this.props
+    const { route, navigation } = this.props
+    const { deckId, data } = route.params
+
+    // console.log('props in NewCard:', JSON.stringify(this.props))
+    
     return (
       <View>
         <Text>NEW CARD</Text>
+        <Text>DeckID = {deckId}</Text>
         <MyButton type='primary' onPress={() => navigation.navigate('Deck')}>Submit</MyButton>
       </View>
     )
