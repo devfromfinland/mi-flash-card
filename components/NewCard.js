@@ -28,8 +28,6 @@ export default class NewCard extends Component {
       visible: true,  // success, inform user on screen
       message: `New card has been added to '${deckId}' deck.`,
     }))
-
-    console.log('window height: ', Dimensions.get('window').height)
   }
 
   onDismissSnackBar = () => {

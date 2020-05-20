@@ -28,93 +28,10 @@ class ListDecks extends Component {
             answer: 'The combination of a function and the lexical environment within which that function was declared.'
           }
         ]
-      },
-      Item1: {
-        title: 'Item1',
-        questions: [
-          {
-            question: 'q1',
-            answer: 'a1'
-          }
-        ]
-      },
-      Item2: {
-        title: 'Item2',
-        questions: [
-          {
-            question: 'q1',
-            answer: 'a1'
-          }
-        ]
-      },
-      Item3: {
-        title: 'Item3',
-        questions: [
-          {
-            question: 'q1',
-            answer: 'a1'
-          }
-        ]
-      },
-      Item4: {
-        title: 'Item4',
-        questions: [
-          {
-            question: 'q1',
-            answer: 'a1'
-          }
-        ]
-      },
-      Item5: {
-        title: 'Item5',
-        questions: [
-          {
-            question: 'q1',
-            answer: 'a1'
-          }
-        ]
-      },
-      Item6: {
-        title: 'Item6',
-        questions: [
-          {
-            question: 'q1',
-            answer: 'a1'
-          }
-        ]
-      },
-      Item7: {
-        title: 'Item7',
-        questions: [
-          {
-            question: 'q1',
-            answer: 'a1'
-          }
-        ]
-      },
-      Item8: {
-        title: 'Item8',
-        questions: [
-          {
-            question: 'q1',
-            answer: 'a1'
-          }
-        ]
-      },
-      Item9: {
-        title: 'Item9',
-        questions: [
-          {
-            question: 'q1',
-            answer: 'a1'
-          }
-        ]
-      },
+      }
     }
 
     let decks = Object.values(sampleData)
-
-    console.log('decks', decks)
 
     const { navigation } = this.props
 

@@ -57,7 +57,7 @@ export default function App() {
       <MyStatusBar backgroundColor={purple} barStyle='light'/>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name='Decks' component={ListDecks}/>
+          <Stack.Screen name='ListDecks' component={ListDecks}/>
           <Stack.Screen name='Deck' component={Deck}/>
           <Stack.Screen name='NewCard' component={NewCard}/>
           <Stack.Screen name='NewDeck' component={NewDeck}/>
