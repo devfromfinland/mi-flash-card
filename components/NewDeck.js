@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, StatusBar } from 'react-native'
 import { render } from 'react-dom'
-import Button from './Button'
+import MyButton from './MyButton'
 
 export default class NewDeck extends Component {
   render() {
@@ -9,7 +9,7 @@ export default class NewDeck extends Component {
     return (
       <View>
         <Text>NEW DECK</Text>
-        <Button type='primary' onPress={() => navigation.navigate('ListDecks')}>Submit</Button>
+        <MyButton type='primary' onPress={() => navigation.navigate('ListDecks')}>Submit</MyButton>
       </View>
     )
   }

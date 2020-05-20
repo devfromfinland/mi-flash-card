@@ -1,17 +1,19 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, StatusBar } from 'react-native'
 import { render } from 'react-dom'
-import Button from './Button'
+import MyButton from './MyButton'
 
 export default class Deck extends Component {
   render() {
-    const { navigation } = this.props
+    const { route, navigation } = this.props
+    const { deckId } = route.params
 
     return (
       <View>
         <Text>DECK</Text>
-        <Button type='primary' onPress={() => navigation.navigate('Quiz')}>Go to Quiz</Button>
-        <Button onPress={() => navigation.navigate('NewCard')}>Add new Card</Button>
+        <Text>Received: {deckId}</Text>
+        <MyButton type='primary' onPress={() => navigation.navigate('Quiz')}>Go to Quiz</MyButton>
+        <MyButton onPress={() => navigation.navigate('NewCard')}>Add new Card</MyButton>
       </View>
     )
   }

@@ -1,10 +1,17 @@
 import React from 'react'
 import { Text, TouchableOpacity, StyleSheet } from 'react-native'
 import { purple, white, red, gray, black } from '../utils/colors'
+import { FontAwesome } from '@expo/vector-icons'
 
-export default function Button ({ children, onPress, style = {}, type }) {
+export default function MyButton ({ children, onPress, style = {}, type }) {
   // style: default = 'outline', 'primary', 'error', 'secondary', 'text'
   switch (type) {
+    case 'float':
+      return (
+        <TouchableOpacity style={styles.btnFloat} onPress={onPress}>
+          <FontAwesome name='plus' color={white} size={30}/>
+        </TouchableOpacity>
+      )
     case 'text':
       return (
         <TouchableOpacity onPress={onPress}>
@@ -72,5 +79,16 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     borderRadius: 5,
     margin: 20,
+  },
+  btnFloat: {
+    position: 'absolute',
+    width: 50,
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    right: 30,
+    bottom: 30,
+    backgroundColor: purple,
+    borderRadius: 50,
   },
 })

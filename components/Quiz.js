@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, StatusBar } from 'react-native'
 import { render } from 'react-dom'
-import Button from './Button'
+import MyButton from './MyButton'
 
 export default class Quiz extends Component {
   render() {
-    const { navigation } = this.props
     return (
       <View>
         <Text>QUIZ</Text>

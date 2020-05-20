@@ -1,7 +1,7 @@
 import React from 'react'
 import { Platform, StyleSheet, Text, View, StatusBar } from 'react-native'
 import Constants from 'expo-constants'
-import Button from './Button'
+import MyButton from './MyButton'
 import { purple } from '../utils/colors'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -26,11 +26,35 @@ const instructions = Platform.select({
 
 const Stack = createStackNavigator()
 
+let sampleData = {
+  React: {
+    title: 'React',
+    questions: [
+      {
+        question: 'What is React?',
+        answer: 'A library for managing user interfaces'
+      },
+      {
+        question: 'Where do you make Ajax requests in React?',
+        answer: 'The componentDidMount lifecycle event'
+      }
+    ]
+  },
+  JavaScript: {
+    title: 'JavaScript',
+    questions: [
+      {
+        question: 'What is a closure?',
+        answer: 'The combination of a function and the lexical environment within which that function was declared.'
+      }
+    ]
+  }
+}
+
 export default function App() {
   return (
     <View style={styles.container}>
       <MyStatusBar backgroundColor={purple} barStyle='light'/>
-      {/* <Text>Hello world 2 !</Text> */}
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name='Decks' component={ListDecks}/>

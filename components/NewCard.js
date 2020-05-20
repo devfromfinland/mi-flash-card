@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, StatusBar } from 'react-native'
 import { render } from 'react-dom'
-import Button from './Button'
+import MyButton from './MyButton'
 
 export default class NewCard extends Component {
   render() {
@@ -9,7 +9,7 @@ export default class NewCard extends Component {
     return (
       <View>
         <Text>NEW CARD</Text>
-        <Button type='primary' onPress={() => navigation.navigate('Deck')}>Submit</Button>
+        <MyButton type='primary' onPress={() => navigation.navigate('Deck')}>Submit</MyButton>
       </View>
     )
   }
