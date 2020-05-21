@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Platform, StyleSheet, Text, View, StatusBar } from 'react-native'
 import Constants from 'expo-constants'
 import MyButton from './MyButton'
@@ -10,6 +10,7 @@ import Deck from './Deck'
 import NewCard from './NewCard'
 import NewDeck from './NewDeck'
 import Quiz from './Quiz'
+import { getDecks } from '../utils/helpers'
 
 function MyStatusBar ({ backgroundColor, ...props }) {
   return (
@@ -19,53 +20,30 @@ function MyStatusBar ({ backgroundColor, ...props }) {
   )
 }
 
-const instructions = Platform.select({
-  ios: `Press Cmd+R to reload,\nCmd+D or shake for dev menu`,
-  android: `Double tap R on your keyboard to reload,\nShake or press menu button for dev menu`,
-})
-
 const Stack = createStackNavigator()
 
-let sampleData = {
-  React: {
-    title: 'React',
-    questions: [
-      {
-        question: 'What is React?',
-        answer: 'A library for managing user interfaces'
-      },
-      {
-        question: 'Where do you make Ajax requests in React?',
-        answer: 'The componentDidMount lifecycle event'
-      }
-    ]
-  },
-  JavaScript: {
-    title: 'JavaScript',
-    questions: [
-      {
-        question: 'What is a closure?',
-        answer: 'The combination of a function and the lexical environment within which that function was declared.'
-      }
-    ]
+class App extends Component {
+  componentDidMount() {
+    // load data from local storage, then set data to redux store
+    
   }
-}
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <MyStatusBar backgroundColor={purple} barStyle='light'/>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name='ListDecks' component={ListDecks}/>
-          <Stack.Screen name='Deck' component={Deck}/>
-          <Stack.Screen name='NewCard' component={NewCard}/>
-          <Stack.Screen name='NewDeck' component={NewDeck}/>
-          <Stack.Screen name='Quiz' component={Quiz}/>
-        </Stack.Navigator>
-      </NavigationContainer>
-    </View>
-  )
+  render() {
+    return (
+      <View style={styles.container}>
+        <MyStatusBar backgroundColor={purple} barStyle='light'/>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen name='ListDecks' component={ListDecks}/>
+            <Stack.Screen name='Deck' component={Deck}/>
+            <Stack.Screen name='NewCard' component={NewCard}/>
+            <Stack.Screen name='NewDeck' component={NewDeck}/>
+            <Stack.Screen name='Quiz' component={Quiz}/>
+          </Stack.Navigator>
+        </NavigationContainer>
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
@@ -73,3 +51,5 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 })
+
+export default App

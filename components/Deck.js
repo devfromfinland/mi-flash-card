@@ -1,13 +1,33 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import MyButton from './MyButton'
+import { getDeck } from '../utils/helpers'
 
 export default class Deck extends Component {
+  state = {
+    deck: null
+  }
+
+  componentDidMount() {
+    const { deckId } = this.props.route.params
+
+    getDeck(deckId)
+      .then((result) => this.setState({
+        deck: result
+      }))
+  }
+
   render() {
     const { route, navigation } = this.props
     const { deckId, data } = route.params
 
-    const deck = data.filter((item) => item.title === deckId)[0]
+    const { deck } = this.state
+    
+    console.log('fetched deck: ', deck)
+
+    if (deck === null || typeof(deck) === 'undefined') {
+      return <View><Text>Fail</Text></View>
+    }
 
     return (
       <View style={styles.container}>

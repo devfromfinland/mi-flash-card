@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TextInput, KeyboardAvoidingView, Platform, Keyb
 import MyButton from './MyButton'
 import { purple, white, gray, red, green } from '../utils/colors'
 import { Snackbar } from 'react-native-paper'
+import { addCardToDeck } from '../utils/helpers'
 
 export default class NewCard extends Component {
   state = {
@@ -41,6 +42,12 @@ export default class NewCard extends Component {
 
       // save to database
       // AsyncStorage
+      let card = {
+        question,
+        answer,
+      }
+
+      addCardToDeck(deck.title, card)
 
       // clear input and inform success message
       this.setState(() => ({

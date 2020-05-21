@@ -6,15 +6,25 @@ import { Ionicons } from '@expo/vector-icons'
 export default class Quiz extends Component {
   state = {
     position: 1,
-    side: 'question'
+    side: 'question',
+    score: 0,
   }
 
-  next = () => this.setState((state) => ({
-    position: state.position + 1
+  correct = () => this.setState((state) => ({
+    position: state.position + 1,
+    side: 'question',
+    score: state.score + 1,
+  }))
+
+  wrong = () => this.setState((state) => ({
+    position: state.position + 1,
+    side: 'question',
   }))
 
   reset = () => this.setState(() => ({
-    position: 1
+    position: 1,
+    score: 0,
+    side: 'question',
   }))
 
   toggleText = () => this.setState((state) => ({
@@ -22,9 +32,9 @@ export default class Quiz extends Component {
   }))
 
   render() {
-    const { route } = this.props
+    const { route, navigation } = this.props
     const { deckId, data } = route.params
-    const { position, side } = this.state
+    const { position, side, score } = this.state
 
     const deck = data.filter((item) => item.title === deckId)[0]
     
@@ -44,11 +54,17 @@ export default class Quiz extends Component {
     if (position > deck.questions.length) {
       return <View style={{flex: 1, margin: 20, justifyContent: 'center'}}>
         <Ionicons name={Platform.OS === 'ios' ? 'ios-happy' : 'md-happy'} size={50} style={{alignSelf: 'center'}}/>
-        <Text style={[styles.notif, {marginBottom: 40, marginTop: 20}]}>
-          Congratulations! You have gone through the deck. Wanna start over?
+        <Text style={[styles.notif, {marginBottom: 10, marginTop: 20}]}>
+          Congratulations! You have gone through the deck.
         </Text>
-        <MyButton type='text' onPress={this.reset}>
-          Reset
+        <Text style={styles.score}>
+          {score} correct {score > 1 ? 'answers' : 'answer'} out of {deck.questions.length} ({Math.floor(score * 100 / deck.questions.length)}%)
+        </Text>
+        <MyButton type='primary' onPress={this.reset}>
+          Restart Quiz
+        </MyButton>
+        <MyButton type='primary' onPress={() => navigation.goBack()}>
+          Back to Deck
         </MyButton>
       </View>
     }
@@ -72,8 +88,8 @@ export default class Quiz extends Component {
         </View>
 
         <View style={styles.buttons}>
-          <MyButton type='primary' onPress={this.next}>Correct</MyButton>
-          <MyButton type='error' onPress={this.next}>Wrong</MyButton>
+          <MyButton type='primary' onPress={this.correct}>Correct</MyButton>
+          <MyButton type='error' onPress={this.wrong}>Wrong</MyButton>
         </View>
       </View>
     )
@@ -103,5 +119,10 @@ const styles = StyleSheet.create({
   notif: {
     fontSize: 30,
     textAlign: 'center',
+  },
+  score: {
+    fontSize: 18,
+    textAlign: 'center',
+    marginBottom: 40,
   }
 })

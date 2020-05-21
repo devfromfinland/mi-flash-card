@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Keyboard } from 'react-native'
 import MyButton from './MyButton'
 import { TextInput, Snackbar } from 'react-native-paper'
 import { white, green, red } from '../utils/colors'
+import { saveDeckTitle } from '../utils/helpers'
 
 export default class NewDeck extends Component {
   state = {
@@ -21,7 +22,7 @@ export default class NewDeck extends Component {
   }
 
   handleSubmit = () => {
-    const { route } = this.props
+    const { route, navigation } = this.props
     const { title } = this.state
 
     if (title === '') {
@@ -33,10 +34,16 @@ export default class NewDeck extends Component {
     } else {
       // check if the deck title is already exist
       let isExist = false
-      if (route.params) {
-        const { data } = route.params
-        isExist = this.isExist(title, data)
-      }
+
+      // console.log('route in NewDeck:' , route)
+      // console.log('typeof route params:' , typeof(route.params))
+      
+      // if (typeof(route.params) !== 'undefined') {
+      //   const { data } = route.params
+      //   (data !== null) 
+      //     ? isExist = this.isExist(title, data)
+      //     : isExist = true
+      // }
 
       if (isExist === true) {
         this.setState(() => ({
@@ -48,7 +55,14 @@ export default class NewDeck extends Component {
         Keyboard.dismiss()
 
         // add new deck to database
-        // console.log(this.state)
+        saveDeckTitle(title)
+
+        // update redux
+
+        // navigate the Deck screen with this new Deck
+        // navigation.navigate('Deck', {
+        //   deckId: title
+        // })
 
         this.setState(() => ({
           title: '',
@@ -72,7 +86,7 @@ export default class NewDeck extends Component {
           value={this.state.title}
           onChangeText={text => this.setState(() => ({ title: text }))}
         />
-        <MyButton type='primary' onPress={this.handleSubmit}>Submit</MyButton>
+        <MyButton type='primary' onPress={this.handleSubmit}>Create Deck</MyButton>
         
         <Snackbar 
           style={{backgroundColor: messageType === 'OK' ? green : red }}
