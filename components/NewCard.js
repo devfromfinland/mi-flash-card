@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, TextInput, KeyboardAvoidingView, Platform, Keyboard, Dimensions } from 'react-native'
 import MyButton from './MyButton'
-import { purple, white, gray } from '../utils/colors'
+import { purple, white, gray, red, green } from '../utils/colors'
 import { Snackbar } from 'react-native-paper'
 
 export default class NewCard extends Component {
@@ -10,24 +10,47 @@ export default class NewCard extends Component {
     answer: '',
     visible: false,
     message: '',
+    messageType: '',
+  }
+
+  isExist = (question, deck) => {
+    console.log('deck: ', deck)
+    return (deck.questions.find((item) => item.question.toUpperCase() === question.toUpperCase()) ? true : false)
   }
 
   handleSubmit = () => {
-    const { deckId } = this.props.route.params
+    const { deckId, data } = this.props.route.params
+    const { question, answer } = this.state
+    const deck = data.filter((item) => item.title === deckId)[0]
 
-    // save to database
-    // AsyncStorage
-    
-    // hide the keyboard
-    Keyboard.dismiss()
+    if (question === '' || answer === '') {
+      this.setState(() => ({
+        visible: true,
+        messageType: 'Error',
+        message: `Please input the question and answer.`,
+      }))
+    } else if (this.isExist(question, deck) === true) {
+      // inform error message
+      this.setState(() => ({
+        visible: true,
+        messageType: 'Error',
+        message: `The card's question is already exist in this deck.`,
+      }))
+    } else {
+      Keyboard.dismiss()
 
-    // clear input for new input
-    this.setState(() => ({
-      question: '',
-      answer: '',
-      visible: true,  // success, inform user on screen
-      message: `New card has been added to '${deckId}' deck.`,
-    }))
+      // save to database
+      // AsyncStorage
+
+      // clear input and inform success message
+      this.setState(() => ({
+        question: '',
+        answer: '',
+        visible: true,
+        messageType: 'OK',
+        message: `New card has been added to '${deckId}' deck.`,
+      }))
+    }
   }
 
   onDismissSnackBar = () => {
@@ -36,7 +59,7 @@ export default class NewCard extends Component {
 
   render() {
     const { deckId } = this.props.route.params
-    const { question, answer, visible, message } = this.state
+    const { question, answer, visible, message, messageType } = this.state
 
     return (
       <KeyboardAvoidingView
@@ -67,7 +90,7 @@ export default class NewCard extends Component {
         </MyButton>
 
         <Snackbar 
-          style={{backgroundColor: gray}}
+          style={{backgroundColor: messageType === 'OK' ? green : red}}
           duration={2000}
           visible={visible}
           onDismiss={this.onDismissSnackBar}

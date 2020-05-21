@@ -59,7 +59,7 @@ class ListDecks extends Component {
           keyExtractor={item => item.title}
         />
 
-        <MyButton type='float' onPress={() => navigation.navigate('NewDeck')} />
+        <MyButton type='float' onPress={() => navigation.navigate('NewDeck', {data: decks})} />
 
       </View>
     )

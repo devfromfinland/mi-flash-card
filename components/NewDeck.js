@@ -1,36 +1,67 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Keyboard } from 'react-native'
 import MyButton from './MyButton'
 import { TextInput, Snackbar } from 'react-native-paper'
-import { gray, white } from '../utils/colors'
+import { white, green, red } from '../utils/colors'
 
 export default class NewDeck extends Component {
   state = {
     title: '',
     visible: false,
     message: '',
+    messageType: ''
   }
 
   onDismissSnackBar = () => {
     this.setState(() => ({ visible: false }))
   }
 
+  isExist = (title, data) => {
+    return (data.find((item) => item.title.toUpperCase() === title.toUpperCase()) ? true : false)
+  }
+
   handleSubmit = () => {
-    const { navigation } = this.props
+    const { route } = this.props
+    const { title } = this.state
 
-    // add new deck to database
-    // console.log(this.state)
+    if (title === '') {
+      this.setState(() => ({
+        messageType: 'Error',
+        visible: true,  // success, inform user on screen
+        message: `Please input the deck title.`,
+      }))
+    } else {
+      // check if the deck title is already exist
+      let isExist = false
+      if (route.params) {
+        const { data } = route.params
+        isExist = this.isExist(title, data)
+      }
 
-    // show notification
-    this.setState(() => ({
-      title: '',
-      visible: true,  // success, inform user on screen
-      message: `New deck has been added to your database.`,
-    }))
+      if (isExist === true) {
+        this.setState(() => ({
+          messageType: 'Error',
+          visible: true,  // success, inform user on screen
+          message: `The deck '${title}' is already exist.`,
+        }))
+      } else {
+        Keyboard.dismiss()
+
+        // add new deck to database
+        // console.log(this.state)
+
+        this.setState(() => ({
+          title: '',
+          messageType: 'OK',
+          visible: true,  // success, inform user on screen
+          message: `New deck '${title}' has been added to database.`,
+        }))
+      }
+    }
   }
 
   render() {
-    const { visible, message } = this.state
+    const { visible, message, messageType } = this.state
 
     return (
       <View style={styles.container}>
@@ -44,7 +75,7 @@ export default class NewDeck extends Component {
         <MyButton type='primary' onPress={this.handleSubmit}>Submit</MyButton>
         
         <Snackbar 
-          style={{backgroundColor: gray}}
+          style={{backgroundColor: messageType === 'OK' ? green : red }}
           duration={2000}
           visible={visible}
           onDismiss={this.onDismissSnackBar}
