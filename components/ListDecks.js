@@ -28,6 +28,10 @@ class ListDecks extends Component {
             answer: 'The combination of a function and the lexical environment within which that function was declared.'
           }
         ]
+      },
+      EmptyDeck: {
+        title: 'EmptyDeck',
+        questions: []
       }
     }
 

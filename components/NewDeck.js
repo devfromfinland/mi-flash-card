@@ -21,9 +21,6 @@ export default class NewDeck extends Component {
     // add new deck to database
     // console.log(this.state)
 
-    // redirect to ListDecks
-    // navigation.navigate('ListDecks', { newDeck: this.state.title })
-
     // show notification
     this.setState(() => ({
       title: '',
