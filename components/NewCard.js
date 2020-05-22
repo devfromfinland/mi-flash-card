@@ -4,8 +4,10 @@ import MyButton from './MyButton'
 import { purple, white, gray, red, green } from '../utils/colors'
 import { Snackbar } from 'react-native-paper'
 import { addCardToDeck } from '../utils/helpers'
+import { addCard, removeCard } from '../actions/decks'
+import { connect } from 'react-redux'
 
-export default class NewCard extends Component {
+class NewCard extends Component {
   state = {
     question: '',
     answer: '',
@@ -15,14 +17,17 @@ export default class NewCard extends Component {
   }
 
   isExist = (question, deck) => {
-    console.log('deck: ', deck)
     return (deck.questions.find((item) => item.question.toUpperCase() === question.toUpperCase()) ? true : false)
   }
 
+  removeCardFromRedux = (question) => {
+    const { dispatch, deckId } = this.props
+    dispatch(removeCard(deckId, question))
+  }
+
   handleSubmit = () => {
-    const { deckId, data } = this.props.route.params
+    const { dispatch, deck, deckId } = this.props
     const { question, answer } = this.state
-    const deck = data.filter((item) => item.title === deckId)[0]
 
     if (question === '' || answer === '') {
       this.setState(() => ({
@@ -40,14 +45,22 @@ export default class NewCard extends Component {
     } else {
       Keyboard.dismiss()
 
-      // save to database
-      // AsyncStorage
       let card = {
         question,
         answer,
       }
 
+      // save to redux
+      dispatch(addCard(deck.title, card))
+      
+      // save to database
       addCardToDeck(deck.title, card)
+        .catch((e) => {
+          // if error, remove newly created card from redux
+          this.removeCardFromRedux(card.question)
+
+          console.warn('NewCard: error when creating a new card.')
+        })
 
       // clear input and inform success message
       this.setState(() => ({
@@ -138,3 +151,14 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
 })
+
+function mapStateToProps({decks}, props) {
+  let data = Object.values(decks)
+  let { deckId } = props.route.params
+  return {
+    deck: data.filter((item) => item.title === deckId)[0],
+    deckId,
+  }
+}
+
+export default connect(mapStateToProps)(NewCard)

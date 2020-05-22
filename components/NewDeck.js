@@ -4,8 +4,10 @@ import MyButton from './MyButton'
 import { TextInput, Snackbar } from 'react-native-paper'
 import { white, green, red } from '../utils/colors'
 import { saveDeckTitle } from '../utils/helpers'
+import { connect } from 'react-redux'
+import { createDeck, removeDeck } from '../actions/decks'
 
-export default class NewDeck extends Component {
+class NewDeck extends Component {
   state = {
     title: '',
     visible: false,
@@ -17,59 +19,60 @@ export default class NewDeck extends Component {
     this.setState(() => ({ visible: false }))
   }
 
-  isExist = (title, data) => {
-    return (data.find((item) => item.title.toUpperCase() === title.toUpperCase()) ? true : false)
+  isExist = (title, deckNames) => {
+    return (deckNames.find((item) => item.toUpperCase() === title.toUpperCase()) ? true : false)
+  }
+
+  removeDeck = (title) => {
+    const { dispatch } = this.props
+
+    // remove from redux
+    dispatch(removeDeck(input))
   }
 
   handleSubmit = () => {
-    const { route, navigation } = this.props
+    const { navigation, deckNames, dispatch } = this.props
     const { title } = this.state
 
     if (title === '') {
       this.setState(() => ({
         messageType: 'Error',
-        visible: true,  // success, inform user on screen
+        visible: true,  // enable message alert
         message: `Please input the deck title.`,
       }))
     } else {
       // check if the deck title is already exist
-      let isExist = false
-
-      // console.log('route in NewDeck:' , route)
-      // console.log('typeof route params:' , typeof(route.params))
-      
-      // if (typeof(route.params) !== 'undefined') {
-      //   const { data } = route.params
-      //   (data !== null) 
-      //     ? isExist = this.isExist(title, data)
-      //     : isExist = true
-      // }
+      let isExist = this.isExist(title, deckNames)
 
       if (isExist === true) {
         this.setState(() => ({
           messageType: 'Error',
-          visible: true,  // success, inform user on screen
+          visible: true,  // enable message alert
           message: `The deck '${title}' is already exist.`,
         }))
       } else {
         Keyboard.dismiss()
-
-        // add new deck to database
-        saveDeckTitle(title)
-
-        // update redux
-
-        // navigate the Deck screen with this new Deck
-        // navigation.navigate('Deck', {
-        //   deckId: title
-        // })
-
         this.setState(() => ({
           title: '',
-          messageType: 'OK',
-          visible: true,  // success, inform user on screen
-          message: `New deck '${title}' has been added to database.`,
+          // NOTE: No need to show notification when navigating to the new deck
         }))
+
+        // update redux
+        dispatch(createDeck(title))
+
+        // update database
+        saveDeckTitle(title)
+          .then(
+            // navigate the Deck screen with this new Deck
+            navigation.navigate('Deck', {
+              deckId: title
+            })
+          )
+          .catch((e) => {
+            // if error, remove newly created deck from redux
+            this.removeDeck(title)
+            console.warn('NewDeck: error when creating a new deck.')
+          })
       }
     }
   }
@@ -112,3 +115,11 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   }
 })
+
+function mapStateToProps({decks}) {
+  return {
+    deckNames: Object.keys(decks)
+  }
+}
+
+export default connect(mapStateToProps)(NewDeck)

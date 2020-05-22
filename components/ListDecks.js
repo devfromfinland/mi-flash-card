@@ -2,30 +2,56 @@ import React, { Component } from 'react'
 import { View, StyleSheet, FlatList, TouchableOpacity, Text } from 'react-native'
 import MyButton from './MyButton'
 import ListDeckItem from './ListDeckItem'
-import { saveDecks, getDecks } from '../utils/helpers'
-// import { connect } from 'react-redux'
+import { getDecks } from '../utils/helpers'
+import { connect } from 'react-redux'
+import { receiveDecks, removeDeck } from '../actions/decks'
+import { TextInput } from 'react-native-paper'
 
 class ListDecks extends Component {
-  state = {
-    decks: null
-  }
+  // state = {
+  //   input: '' // FOR TEST
+  // }
 
   componentDidMount() {
-    // get data from local storage
+    const { dispatch } = this.props
+
+    // get data from database and bind it to redux
     getDecks()
-      .then((result) => {
-        (result !== null)
-          ? this.setState({ decks: Object.values(result) })
-          : null
-    })
+      .then((decks) => {
+        dispatch(receiveDecks(decks))
+      })
+      .catch((e) => {
+        console.warn('action: error in getting decks.')
+      })
   }
 
+  // FOR TEST
+  // removeDeck = () => {
+  //   const { input } = this.state
+  //   const { dispatch } = this.props
+
+  //   // remove from redux
+  //   dispatch(removeDeck(input))
+
+  //   this.setState(() => ({ input: '' }))
+  // }
+
   render() {
-    const { navigation } = this.props
-    const { decks } = this.state
+    const { navigation, decks } = this.props
 
     return (
       <View style={{flex: 1}}>
+        {/* FOR TEST */}
+        {/* <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <TextInput 
+            label='Deck title'
+            placeholder='Which deck title you want to remove?'
+            mode='flat'
+            value={this.state.input}
+            onChangeText={text => this.setState(() => ({ input: text }))}
+          />
+          <MyButton type='primary' onPress={this.removeDeck}>Remove deck</MyButton>
+        </View> */}
         <FlatList 
           data={decks}
           ListEmptyComponent={
@@ -37,8 +63,7 @@ class ListDecks extends Component {
           renderItem={({ item }) => 
             <TouchableOpacity onPress={() => {
               navigation.navigate('Deck', {
-                deckId: item.title,
-                data: decks
+                deckId: item.title
               })}
               }>
               <ListDeckItem 
@@ -50,8 +75,7 @@ class ListDecks extends Component {
           keyExtractor={item => item.title}
         />
 
-        <MyButton type='float' onPress={() => navigation.navigate('NewDeck', {data: decks})} />
-
+        <MyButton type='float' onPress={() => navigation.navigate('NewDeck')} />
       </View>
     )
   }
@@ -73,5 +97,9 @@ const styles = StyleSheet.create({
   }
 })
 
-// to connect to redux
-export default ListDecks
+function mapStateToProps ({decks}) {
+  return {
+    decks: Object.values(decks)
+  }
+}
+export default connect(mapStateToProps)(ListDecks)

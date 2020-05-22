@@ -1,29 +1,25 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import MyButton from './MyButton'
-import { getDeck } from '../utils/helpers'
+import { connect } from 'react-redux'
+// import { TextInput } from 'react-native-paper'
+// import { removeCard } from '../actions/decks'
 
-export default class Deck extends Component {
-  state = {
-    deck: null
-  }
+class Deck extends Component {
+  // state = {
+  //   input: '' // FOR TESTING
+  // }
 
-  componentDidMount() {
-    const { deckId } = this.props.route.params
-
-    getDeck(deckId)
-      .then((result) => this.setState({
-        deck: result
-      }))
-  }
+  // removeCardFromRedux = () => {
+  //   const { dispatch, deckId } = this.props
+  //   dispatch(removeCard(deckId, this.state.input))
+    
+  //   // FOR TESTING
+  //   // this.setState(() => ({ input: '' }))
+  // }
 
   render() {
-    const { route, navigation } = this.props
-    const { deckId, data } = route.params
-
-    const { deck } = this.state
-    
-    console.log('fetched deck: ', deck)
+    const { navigation, deck } = this.props
 
     if (deck === null || typeof(deck) === 'undefined') {
       return <View><Text>Fail</Text></View>
@@ -38,18 +34,32 @@ export default class Deck extends Component {
         </Text>
         <View style={{marginTop: 30}} />
 
-        {/* {console.log('deck = ', deck)} */}
-
         <MyButton
           type='primary'
-          onPress={() => navigation.navigate('Quiz', { deckId: deck.title, data })}>
+          onPress={() => navigation.navigate('Quiz', { deckId: deck.title })}>
           Start Quiz
         </MyButton>
 
         <MyButton 
-          onPress={() => navigation.navigate('NewCard', { deckId: deck.title, data })}>
+          onPress={() => navigation.navigate('NewCard', { deckId: deck.title })}>
           Add new Card
         </MyButton>
+
+        {/* FOR TEST */}
+        {/* <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <TextInput 
+            label='Card question'
+            placeholder='Which card question you want to remove?'
+            mode='flat'
+            value={this.state.input}
+            onChangeText={text => this.setState(() => ({ input: text }))}
+          />
+          <MyButton 
+            type='primary'
+            onPress={this.removeCardFromRedux}>
+            Remove card
+          </MyButton>
+        </View> */}
       </View>
     )
   }
@@ -75,3 +85,14 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   }
 })
+
+function mapStateToProps({decks}, props) {
+  let data = Object.values(decks)
+  let { deckId } = props.route.params
+  return {
+    deck: data.filter((item) => item.title === deckId)[0],
+    deckId,
+  }
+}
+
+export default connect(mapStateToProps)(Deck)

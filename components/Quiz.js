@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import { View, Text, StyleSheet,Platform } from 'react-native'
 import MyButton from './MyButton'
 import { Ionicons } from '@expo/vector-icons'
+import { connect } from 'react-redux'
 
-export default class Quiz extends Component {
+class Quiz extends Component {
   state = {
     position: 1,
     side: 'question',
@@ -32,11 +33,8 @@ export default class Quiz extends Component {
   }))
 
   render() {
-    const { route, navigation } = this.props
-    const { deckId, data } = route.params
+    const { navigation, deck } = this.props
     const { position, side, score } = this.state
-
-    const deck = data.filter((item) => item.title === deckId)[0]
     
     // check if there is no card, then render Empty view
     if (deck.questions.length === 0) {
@@ -50,7 +48,7 @@ export default class Quiz extends Component {
       </View>
     }
 
-    // check if last card has learn, then render Complete view
+    // check if last card has been passed, then render Complete view
     if (position > deck.questions.length) {
       return <View style={{flex: 1, margin: 20, justifyContent: 'center'}}>
         <Ionicons name={Platform.OS === 'ios' ? 'ios-happy' : 'md-happy'} size={50} style={{alignSelf: 'center'}}/>
@@ -126,3 +124,14 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   }
 })
+
+function mapStateToProps({ decks }, props) {
+  let data = Object.values(decks)
+  let { deckId } = props.route.params
+  return {
+    deck: data.filter((item) => item.title === deckId)[0],
+    deckId,
+  }
+}
+
+export default connect(mapStateToProps)(Quiz)

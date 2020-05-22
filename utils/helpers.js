@@ -19,14 +19,13 @@ export async function getDeck(id) {
 export async function getDecks() {
   try {
     const data = await AsyncStorage.getItem(FLASHCARD_STORAGE_KEY)
-    console.log('fetched data: ', JSON.parse(data))
     return data !== null ? JSON.parse(data) : null
   } catch(e) {
     console.log('error when fetching decks')
   }
 }
 
-function formatNewTitle(title, cards = null) {
+export function formatNewTitle(title, cards = null) {
   return {
     [title]: {
       title: title,
@@ -60,6 +59,14 @@ async function updateDeck(deck) {
   }
 }
 
+export async function removeDeck(title) {
+  try {
+    
+  } catch (e) {
+    console.log('@helpers, error when updating deck', e)
+  }
+}
+
 // take in two arguments, title and card,
 // and will add the card to the list of questions for the deck with the associated title
 export async function addCardToDeck(title, card) {
@@ -89,4 +96,11 @@ export async function saveDecks(decks) {
   } catch (e) {
     console.log('error when saving decks')
   }
+}
+
+export function arrayToObject(array) {
+  array.reduce((obj, item) => {
+    obj[item.id] = item
+    return obj
+  }, {})
 }
