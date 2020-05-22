@@ -2,21 +2,22 @@ import React, { Component } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import MyButton from './MyButton'
 import { connect } from 'react-redux'
-// import { TextInput } from 'react-native-paper'
-// import { removeCard } from '../actions/decks'
+import { red } from '../utils/colors'
+import { removeDeck } from '../actions/decks'
+import { removeDeckFromDatabase } from '../utils/helpers'
 
 class Deck extends Component {
-  // state = {
-  //   input: '' // FOR TESTING
-  // }
-
-  // removeCardFromRedux = () => {
-  //   const { dispatch, deckId } = this.props
-  //   dispatch(removeCard(deckId, this.state.input))
-    
-  //   // FOR TESTING
-  //   // this.setState(() => ({ input: '' }))
-  // }
+  removeThisDeck = () => {
+      const { dispatch, deckId, navigation } = this.props
+      
+      // remove from database
+      removeDeckFromDatabase(deckId)
+        .then(dispatch(removeDeck(deckId))) // remove from redux
+        .then(navigation.navigate('ListDecks'))
+        .catch((e) => {
+          console.warn('something is wrong when removing this deck')
+        })
+  }
 
   render() {
     const { navigation, deck } = this.props
@@ -45,21 +46,14 @@ class Deck extends Component {
           Add new Card
         </MyButton>
 
-        {/* FOR TEST */}
-        {/* <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <TextInput 
-            label='Card question'
-            placeholder='Which card question you want to remove?'
-            mode='flat'
-            value={this.state.input}
-            onChangeText={text => this.setState(() => ({ input: text }))}
-          />
-          <MyButton 
-            type='primary'
-            onPress={this.removeCardFromRedux}>
-            Remove card
-          </MyButton>
-        </View> */}
+        <MyButton
+          type='float'
+          style={{backgroundColor: red}}
+          icon='trash'
+          onPress={this.removeThisDeck}
+          >
+          
+        </MyButton>
       </View>
     )
   }

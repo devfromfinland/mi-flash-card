@@ -3,13 +3,13 @@ import { Text, TouchableOpacity, StyleSheet } from 'react-native'
 import { purple, white, red, gray, black } from '../utils/colors'
 import { FontAwesome } from '@expo/vector-icons'
 
-export default function MyButton ({ children, onPress, style = {}, type }) {
+export default function MyButton ({ children, onPress, type, style = {}, icon = '' }) {
   // style: default = 'outline', 'primary', 'error', 'secondary', 'text', 'float'
   switch (type) {
     case 'float':
       return (
-        <TouchableOpacity style={styles.btnFloat} onPress={onPress}>
-          <FontAwesome name='plus' color={white} size={30}/>
+        <TouchableOpacity style={[styles.btnFloat, {...style}]} onPress={onPress}>
+          <FontAwesome name={icon === '' ? 'plus' : icon} color={white} size={30}/>
         </TouchableOpacity>
       )
     case 'text':

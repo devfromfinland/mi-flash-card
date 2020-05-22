@@ -4,14 +4,9 @@ import MyButton from './MyButton'
 import ListDeckItem from './ListDeckItem'
 import { getDecks } from '../utils/helpers'
 import { connect } from 'react-redux'
-import { receiveDecks, removeDeck } from '../actions/decks'
-import { TextInput } from 'react-native-paper'
+import { receiveDecks } from '../actions/decks'
 
 class ListDecks extends Component {
-  // state = {
-  //   input: '' // FOR TEST
-  // }
-
   componentDidMount() {
     const { dispatch } = this.props
 
@@ -25,33 +20,11 @@ class ListDecks extends Component {
       })
   }
 
-  // FOR TEST
-  // removeDeck = () => {
-  //   const { input } = this.state
-  //   const { dispatch } = this.props
-
-  //   // remove from redux
-  //   dispatch(removeDeck(input))
-
-  //   this.setState(() => ({ input: '' }))
-  // }
-
   render() {
     const { navigation, decks } = this.props
 
     return (
       <View style={{flex: 1}}>
-        {/* FOR TEST */}
-        {/* <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <TextInput 
-            label='Deck title'
-            placeholder='Which deck title you want to remove?'
-            mode='flat'
-            value={this.state.input}
-            onChangeText={text => this.setState(() => ({ input: text }))}
-          />
-          <MyButton type='primary' onPress={this.removeDeck}>Remove deck</MyButton>
-        </View> */}
         <FlatList 
           data={decks}
           ListEmptyComponent={

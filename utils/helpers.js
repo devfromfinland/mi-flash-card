@@ -1,7 +1,7 @@
 import React from 'react'
 import AsyncStorage from '@react-native-community/async-storage'
 
-const FLASHCARD_STORAGE_KEY = 'MiFlashCard6:test'
+const FLASHCARD_STORAGE_KEY = 'MiFlashCard:Production'
 
 // (done) take in a single id argument and return the deck associated with that id
 export async function getDeck(id) {
@@ -39,9 +39,13 @@ export async function saveDeckTitle(title) {
   try {
     // check data is not exist, create new
     const data = await AsyncStorage.getItem(FLASHCARD_STORAGE_KEY)
+
     if (data === null) {
       return saveDecks(formatNewTitle(title))
     }
+
+    // should have a function to check if local data is valid
+    // if local data was incorrectly saved, then should clear that local data
 
     // if data is exist, merge with existing data
     await AsyncStorage.mergeItem(FLASHCARD_STORAGE_KEY, JSON.stringify(formatNewTitle(title)))
@@ -59,11 +63,21 @@ async function updateDeck(deck) {
   }
 }
 
-export async function removeDeck(title) {
+export async function removeDeckFromDatabase(title) {
   try {
-    
+    getDecks()
+      .then((result) => {
+        const newDecks = Object.values(result)
+          .filter((item) => item.title !== title)
+          .reduce((obj, item) => {
+            obj[item.title] = item
+            return obj
+          }, {})
+        return newDecks
+      })
+      .then((newDecks) => saveDecks(newDecks))
   } catch (e) {
-    console.log('@helpers, error when updating deck', e)
+    console.log('@helpers, error when removing deck', e)
   }
 }
 
@@ -91,7 +105,7 @@ export async function addCardToDeck(title, card) {
 export async function saveDecks(decks) {
   try {
     const jsonValue = JSON.stringify(decks)
-    console.log('decks to be saved: ', jsonValue)
+    // console.log('decks to be saved: ', jsonValue)
     await AsyncStorage.setItem(FLASHCARD_STORAGE_KEY, jsonValue)
   } catch (e) {
     console.log('error when saving decks')
