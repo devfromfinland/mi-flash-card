@@ -12,6 +12,10 @@ npm install
 expo start
 ```
 
+## Notes:
+- The project used [expo init](https://docs.expo.io/) instead of [create-react-native-app] to start
+- I have mainly tested the app on Android and Web, not iOS
+
 ## Features:
 - [x] Create/remove deck
 - [x] Add new card to deck
