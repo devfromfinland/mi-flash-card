@@ -52,8 +52,8 @@ class Quiz extends Component {
     // check if last card has been passed, then render Complete view
     if (position > deck.questions.length) {
       // clear today notification, and set a new one for tomorrow
-      clearLocalNotification()
-        .then(setLocalNotification)
+      // clearLocalNotification()
+      //   .then(setLocalNotification)
 
       return <View style={{flex: 1, margin: 20, justifyContent: 'center'}}>
         <Ionicons name={Platform.OS === 'ios' ? 'ios-happy' : 'md-happy'} size={50} style={{alignSelf: 'center'}}/>

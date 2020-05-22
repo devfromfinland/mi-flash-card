@@ -32,11 +32,11 @@ class App extends Component {
           <MyStatusBar backgroundColor={purple} barStyle='light'/>
           <NavigationContainer>
             <Stack.Navigator>
-              <Stack.Screen name='ListDecks' component={ListDecks}/>
-              <Stack.Screen name='Deck' component={Deck}/>
-              <Stack.Screen name='NewCard' component={NewCard}/>
-              <Stack.Screen name='NewDeck' component={NewDeck}/>
-              <Stack.Screen name='Quiz' component={Quiz}/>
+              <Stack.Screen name='ListDecks' component={ListDecks} options={{ title: 'Your decks'}}/>
+              <Stack.Screen name='Deck' component={Deck} options={({ route }) => ({ title: `Deck: ${route.params.deckId}`})}/>
+              <Stack.Screen name='NewCard' component={NewCard} options={({ route }) => ({ title: `Add a new card to '${route.params.deckId}'`})}/>
+              <Stack.Screen name='NewDeck' component={NewDeck} options={{ title: 'Create a new deck'}}/>
+              <Stack.Screen name='Quiz' component={Quiz} options={({ route }) => ({ title: `Quiz (deck: ${route.params.deckId})`})}/>
             </Stack.Navigator>
           </NavigationContainer>
         </View>
