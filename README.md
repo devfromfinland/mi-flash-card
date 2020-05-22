@@ -16,4 +16,4 @@ expo start
 - [x] Create/remove deck
 - [x] Add new card to deck
 - [x] Quiz
-- [] Cards management (to be added in the future)
+- [ ] Cards management (to be added in the future)
