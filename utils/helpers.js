@@ -1,5 +1,6 @@
 import React from 'react'
-import AsyncStorage from '@react-native-community/async-storage'
+import { AsyncStorage } from 'react-native'
+// import AsyncStorage from '@react-native-community/async-storage'
 
 const FLASHCARD_STORAGE_KEY = 'MiFlashCard:Production'
 
