@@ -30,12 +30,14 @@ class NewCard extends Component {
     const { question, answer } = this.state
 
     if (question === '' || answer === '') {
+      Keyboard.dismiss()
       this.setState(() => ({
         visible: true,
         messageType: 'Error',
         message: `Please input the question and answer.`,
       }))
     } else if (this.isExist(question, deck) === true) {
+      Keyboard.dismiss()
       // inform error message
       this.setState(() => ({
         visible: true,

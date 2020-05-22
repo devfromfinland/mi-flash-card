@@ -52,7 +52,6 @@ class Deck extends Component {
           icon='trash'
           onPress={this.removeThisDeck}
           >
-          
         </MyButton>
       </View>
     )
