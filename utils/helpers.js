@@ -123,7 +123,7 @@ export function arrayToObject(array) {
   }, {})
 }
 
-export function clearLocalNotifcation() {
+export function clearLocalNotification() {
   return AsyncStorage.removeItem(NOTIFICATION_KEY)
     .then(Notifications.cancelAllScheduledNotificationsAsync)
 }
@@ -167,8 +167,13 @@ export function setLocalNotification() {
                 },
                 AsyncStorage.setItem(NOTIFICATION_KEY, JSON.stringify(true))
               )
-            }
+            } else (
+              console.log('Notification permission is not granted. Status: ', status)
+            )
           })
-      }
-    })
+          .catch((e) => {
+            console.warn('error in asking Notification permission', e)
+          })
+      } else { console.log('notification data', data)}
+    }) 
 }

@@ -8,7 +8,7 @@ npm install --global expo-cli
 
 ## To run the project:
 ```
-expo init
+npm install
 expo start
 ```
 
